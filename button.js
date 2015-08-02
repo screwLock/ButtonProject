@@ -18,12 +18,15 @@ function createButton(buttonNumber, imgsrc){
 
 /*function to change the image for various mouse events. */
 
-function changeImage()
+function changeImage(oldButton, newImagesrc)
 {
-	//just test code to make sure it works
-	document.images['button 1'].src = "blue_button.jpg";
+	var oldImageName = oldButton.getAttribute("name");
+	document.images[oldImageName].src = newImagesrc;
+	
+	return true;
 }
 
 
 var button1 = createButton(1, 'image1.png');
-changeImage();
+changeImage(button1, "blue_button.jpg");
+changeImage(button1, "image1.png")
