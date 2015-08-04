@@ -10,7 +10,8 @@ Parameters: buttonNumber:  the number for the
 			location of the image.
 			
 Output:  returns the button after appending it to
-		  the html document.
+		  the html document.  Its name, alt, and
+		  src attributes will be set
 ******************************************/
 
 function createButton(buttonNumber, imgsrc){
@@ -19,13 +20,13 @@ function createButton(buttonNumber, imgsrc){
 	//create an image HTML element for the button
 	var newButton = document.createElement("img");
 	
-	//Bad Code Smell--Should be refactored
+	//Bad Code Smell Maybe--Should be refactored
 	newButton.setAttribute('name',buttonName);
 	newButton.setAttribute('alt', buttonName);
 	newButton.setAttribute('src', imgsrc);
 	
-	//newButton.setAttribute('onMouseOver', "return changeImage()");
 	
+		
 	
 	//temporary ID and will need to be fixed in both HTML and JS
 	var buttonTag = document.getElementById("button");
@@ -35,13 +36,9 @@ function createButton(buttonNumber, imgsrc){
 }
 
 
-/*function to make a button clickable--
---wraps image in an anchor tag--*/
 
-function makeClickable(clickButton)
-{
-	//make anchor tags <a></a> parent of button element
-}
+
+
 
 
 
@@ -52,6 +49,8 @@ Purpose: to change the image for various mouse events.
 Parameters:  oldButton:  button node object to be changed
 			 newImagesrc:  string specifying the file
 			 location of the new button image to be used
+
+Return Value:  Returns true if successful
 *******************************************************/
 function changeImage(oldButton, newImagesrc)
 {
@@ -65,8 +64,8 @@ function changeImage(oldButton, newImagesrc)
 
 
 var button1 = createButton(1, 'image1.png');
-//var button2 = createButton(2, 'image1.png');
+var button2 = createButton(2, 'image1.png');
 
-wrapInAnchor('google.com', button1);
-//changeImage(button1, "blue_button.jpg");
-//changeImage(button1, "image1.png")
+
+wrapInAnchor('http://www.google.com', button1);
+wrapInAnchor('http://www.yahoo.com', button2);

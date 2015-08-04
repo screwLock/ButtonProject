@@ -18,12 +18,8 @@ function wrapInAnchor(hyperlink, wrapped){
 	var unwrappedElement = document.getElementsByName(wrapped.getAttribute("name"));
 	var parent = wrapped.parentNode;
 	
-	
+	//add the now anchored tag to the HTML document
 	wrapper.appendChild(unwrappedElement[0]);
-	parent.appendChild(wrapper);
-	
-	alert(wrapper.outerHTML);
-	alert('finished');
-	
+	parent.appendChild(wrapper);	
 }
 

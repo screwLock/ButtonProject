@@ -1,0 +1,13 @@
+@keyframes pop{
+
+	from {background-color: black;}
+	to {background-color: red;}
+}
+
+a:hover {
+
+	animation-name: pop;
+	animation-duration: 1s;
+
+}
+
